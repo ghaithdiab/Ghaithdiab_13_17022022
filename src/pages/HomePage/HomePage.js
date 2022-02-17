@@ -1,12 +1,12 @@
 import React from 'react'
 import Header from '../../components/Header/Header'
-import './Home.css'
+import './HomePage.css'
 import FeatureItem from '../../components/FeatureItem/FeatureItem'
 import chat from '../../assets/icon-chat.png'
 import money from '../../assets/icon-money.png'
 import security from '../../assets/icon-security.png'
 import Footer from '../../components/Footer/Footer'
-export default function Home() {
+export default function HomePage() {
   return (
     <div>
       <Header/>

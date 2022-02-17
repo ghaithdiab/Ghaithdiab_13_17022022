@@ -5,7 +5,7 @@ import './Header.css'
 export default function Header() {
   return (
     <nav className="main-nav">
-      <Link className="main-nav-logo" to="/Home">
+      <Link className="main-nav-logo" to="/">
         <img
           className="main-nav-logo-image"
           src={logo}
@@ -14,10 +14,10 @@ export default function Header() {
         <h1 className="sr-only">Argent Bank</h1>
       </Link>
       <div>
-        <a className="main-nav-item" href="./sign-in.html">
+        <Link className="main-nav-item" to='/Login'>
           <i className="fa fa-user-circle"></i>
           Sign In
-        </a>
+        </Link>
       </div>
     </nav>
   )
