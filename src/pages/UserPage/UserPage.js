@@ -6,6 +6,9 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Navigate } from 'react-router-dom'
 import GetUserInfo from '../../Actions/GetUserInfoAction'
 import UpdateUserInfo from '../../Actions/UpdateUserInfoAction'
+import Account from '../../components/Account/Account'
+import { accounts } from '../../dataMockup/AccountsData'
+
 export default function UserPage() {
   const [formDisplayed, setFormDisPlayed] = useState(false)
   const [name, setName] = useState({ firstName: '', lastName: '' })
@@ -85,36 +88,24 @@ export default function UserPage() {
           )}
         </div>
         <h2 className="sr-only">Accounts</h2>
-        <section className="account">
-          <div className="account-content-wrapper">
-            <h3 className="account-title">Argent Bank Checking (x8349)</h3>
-            <p className="account-amount">$2,082.79</p>
-            <p className="account-amount-description">Available Balance</p>
-          </div>
-          <div className="account-content-wrapper cta">
-            <button className="transaction-button">View transactions</button>
-          </div>
-        </section>
-        <section className="account">
-          <div className="account-content-wrapper">
-            <h3 className="account-title">Argent Bank Savings (x6712)</h3>
-            <p className="account-amount">$10,928.42</p>
-            <p className="account-amount-description">Available Balance</p>
-          </div>
-          <div className="account-content-wrapper cta">
-            <button className="transaction-button">View transactions</button>
-          </div>
-        </section>
-        <section className="account">
-          <div className="account-content-wrapper">
-            <h3 className="account-title">Argent Bank Credit Card (x8349)</h3>
-            <p className="account-amount">$184.30</p>
-            <p className="account-amount-description">Current Balance</p>
-          </div>
-          <div className="account-content-wrapper cta">
-            <button className="transaction-button">View transactions</button>
-          </div>
-        </section>
+        <Account
+          title={accounts[0].title}
+          amount={accounts[0].amount}
+          description={accounts[0].description}
+        ></Account>
+        <Account
+          title={accounts[1].title}
+          amount={accounts[1].amount}
+          description={accounts[1].description}
+        ></Account>
+        <Account
+          title={accounts[2].title}
+          amount={accounts[2].amount}
+          description={accounts[2].description}
+        ></Account>
+        {/* {accounts.forEach((element)=>{
+          <Account title={element.title} amount={element.amount} description={element.description}></Account>
+        })} */}
       </main>
       <Footer />
     </div>
