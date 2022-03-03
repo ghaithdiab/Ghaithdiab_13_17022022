@@ -3,6 +3,18 @@
   padding-top: 10px;
   padding-bottom: 25px;
 }
+.input{
+  margin-bottom: 20px;
+}
+.input .input-edit{
+  padding: 0.9em;
+  margin: 10px;
+  outline: none;
+}
+.edit-button{
+  margin: 10px;
+  padding: 0.9em;
+}
 .account {
   display: flex;
   justify-content: space-between;

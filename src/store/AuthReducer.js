@@ -2,8 +2,9 @@ import { applyMiddleware, createStore } from 'redux'
 import thunk from 'redux-thunk'
 const initState = {
   email: null,
+  firstName:null,
+  lastName:null,
   token: null,
-  loading:false,
   isLoggedin:false,
   error:false
 }
@@ -13,7 +14,6 @@ const AuthReduser = (state = initState, action) => {
     case  "POST_REQUEST" :
       return {
         ...initState,
-        loading:true
       }
     case "POST_SUCCESS": 
     return {
@@ -26,6 +26,17 @@ const AuthReduser = (state = initState, action) => {
         ...initState,
         error:true
       }
+      case "LOG_OUT":
+        return{
+          ...initState
+        }
+        case "USER_INFO":
+          return{
+            ...initState,
+            firstName:action.payload.firstName,
+            lastName:action.payload.lastName,
+            isLoggedin:true
+          }
 
     default : return state
   }

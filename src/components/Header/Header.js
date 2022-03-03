@@ -2,7 +2,15 @@ import React from 'react'
 import logo from '../../assets/argentBankLogo.png'
 import { Link } from 'react-router-dom'
 import './Header.css'
+import { useDispatch, useSelector } from 'react-redux'
+import Logout from '../../Actions/LogoutAction'
 export default function Header() {
+  const globalState = useSelector((state) => state)
+  const dispatch = useDispatch()
+  const disConnect = () => {
+    // e.preventDefault()
+    dispatch(Logout())
+  }
   return (
     <nav className="main-nav">
       <Link className="main-nav-logo" to="/">
@@ -13,12 +21,25 @@ export default function Header() {
         />
         <h1 className="sr-only">Argent Bank</h1>
       </Link>
-      <div>
-        <Link className="main-nav-item" to='/Login'>
+      {globalState.isLoggedin ? (
+        <div>
+          <Link to="/user">
+            <span className="main-nav-item">
+              <i className="fa fa-user-circle"></i>
+              {'Ghaith'}
+            </span>
+          </Link>
+          <Link className="main-nav-item" onClick={disConnect} to="/">
+            <i className="fa fa-sign-out"></i>
+            Sign Out
+          </Link>
+        </div>
+      ) : (
+        <Link className="main-nav-item" to="/Login">
           <i className="fa fa-user-circle"></i>
           Sign In
         </Link>
-      </div>
+      )}
     </nav>
   )
 }
