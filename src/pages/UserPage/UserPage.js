@@ -5,13 +5,21 @@ import './UserPage.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { Navigate } from 'react-router-dom'
 import GetUserInfo from '../../Actions/GetUserInfoAction'
+import UpdateUserInfo from '../../Actions/UpdateUserInfoAction'
 export default function UserPage() {
   const [formDisplayed, setFormDisPlayed] = useState(false)
+  const [name, setName] = useState({ firstName: '', lastName: '' })
   const globalState = useSelector((state) => state)
   const dispatch = useDispatch()
   useEffect(() => {
     dispatch(GetUserInfo())
   }, [dispatch])
+
+  const updateUserName = (e) => {
+    e.preventDefault()
+    dispatch(UpdateUserInfo(name))
+    setFormDisPlayed(false)
+  }
   if (!globalState.isLoggedin) {
     return <Navigate to="/" />
   }
@@ -35,7 +43,7 @@ export default function UserPage() {
               </button>
             </div>
           ) : (
-            <form>
+            <form onSubmit={updateUserName}>
               <h1>Welcome back</h1>
               <div className="input">
                 <input
@@ -44,6 +52,10 @@ export default function UserPage() {
                   type="text"
                   id="firstName"
                   placeholder={globalState.firstName}
+                  value={name.firstName}
+                  onChange={(e) =>
+                    setName({ ...name, firstName: e.target.value })
+                  }
                 />
                 <input
                   required
@@ -51,6 +63,10 @@ export default function UserPage() {
                   type="text"
                   id="lastName"
                   placeholder={globalState.lastName}
+                  value={name.lastName}
+                  onChange={(e) =>
+                    setName({ ...name, lastName: e.target.value })
+                  }
                 />
               </div>
               <div className="buttons">

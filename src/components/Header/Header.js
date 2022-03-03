@@ -8,7 +8,6 @@ export default function Header() {
   const globalState = useSelector((state) => state)
   const dispatch = useDispatch()
   const disConnect = () => {
-    // e.preventDefault()
     dispatch(Logout())
   }
   return (
@@ -23,11 +22,9 @@ export default function Header() {
       </Link>
       {globalState.isLoggedin ? (
         <div>
-          <Link to="/user">
-            <span className="main-nav-item">
+          <Link to="/user" className="main-nav-item">
               <i className="fa fa-user-circle"></i>
-              {'Ghaith'}
-            </span>
+              {globalState.firstName}
           </Link>
           <Link className="main-nav-item" onClick={disConnect} to="/">
             <i className="fa fa-sign-out"></i>
