@@ -1,6 +1,13 @@
 import React from 'react'
 import './FeatureItem.css'
 import PropTypes from 'prop-types'
+
+/**
+ * 
+ * @param {img} image 
+ * @param {string} title
+ * @param {string} description  
+ */
 export default function FeatureItem({image ,title ,description}) {
   return (
     <div className='feature-item'>

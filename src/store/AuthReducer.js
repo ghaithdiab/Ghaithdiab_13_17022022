@@ -41,8 +41,6 @@ const AuthReduser = (state = initState, action) => {
     default:
       return state
   }
-
-  // return state
 }
 
 const store = createStore(AuthReduser, composeEnhancers(applyMiddleware(thunk)))

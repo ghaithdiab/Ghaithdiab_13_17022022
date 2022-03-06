@@ -4,8 +4,10 @@ import { Link } from 'react-router-dom'
 import './Header.css'
 import { useDispatch, useSelector } from 'react-redux'
 import Logout from '../../Actions/LogoutAction'
+
+
 export default function Header() {
-  const globalState = useSelector((state) => state)
+  const globalState = useSelector((state) => state) //get global State info
   const dispatch = useDispatch()
   const disConnect = () => {
     dispatch(Logout())

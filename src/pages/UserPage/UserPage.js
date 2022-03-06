@@ -14,6 +14,7 @@ export default function UserPage() {
   const [name, setName] = useState({ firstName: '', lastName: '' })
   const globalState = useSelector((state) => state)
   const dispatch = useDispatch()
+  
   useEffect(() => {
     dispatch(GetUserInfo())
   }, [dispatch])

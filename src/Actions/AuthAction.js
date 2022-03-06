@@ -1,6 +1,10 @@
 import axios from 'axios'
 
-
+/**
+ * Login Action (Api call to sign in )
+ * @param {object} info 
+ * @returns {Function} dispatch
+ */
 const Login = (info) => (dispatch) => {
     dispatch({type:"POST_REQUEST" ,payload:info})
     axios

@@ -1,5 +1,9 @@
 import axios from 'axios'
 
+/**
+ * Api call to get user info (Action)
+ * @returns {Function} dispatch
+ */
 const GetUserInfo = () => (dispatch) => {
   axios
     .post(

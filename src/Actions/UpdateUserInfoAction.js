@@ -1,5 +1,10 @@
 import axios from 'axios'
 
+/**
+ * Api call to update user info (Action)
+ * @param {object} name 
+ * @returns {Function} dispatch
+ */
 const UpdateUserInfo = (name) => (dispatch) => {
   axios
     .put('http://localhost:3001/api/v1/user/profile', name, {
