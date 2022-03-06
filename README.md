@@ -1,70 +1,80 @@
-# Getting Started with Create React App
+# OPENCLASSROOMS PROJECT 13
 
+A React app for managing a user Bank Account
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Dependencies
 
-In the project directory, you can run:
+- [React](https://reactjs.org/) v17.0.1
 
-### `npm start`
+- [react-router-dom](https://reactrouter.com/web/guides/quick-start) v5.2.0
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- [prop-types](https://www.npmjs.com/package/prop-types) v15.7.2
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- [Axios](https://github.com/axios/axios) v0.21.1
 
-### `npm test`
+- [Redux](https://redux.js.org/) v4.0.5
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [React Redux](https://react-redux.js.org/) v7.2.2
 
-### `npm run build`
+## Installation Dependencies
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- You need [Git](https://git-scm.com/) to clone the repository
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- You need [Node](https://nodejs.org/en/) (v14.15.5) to run the `npm` commands
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Install and run the project
 
-### `npm run eject`
+backend
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. Fork this repo `https://github.com/OpenClassrooms-Student-Center/Project-10-Bank-API`
+1. Clone the repo onto your computer
+1. Open a terminal window in the cloned project
+1. Run the following commands:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+# Install dependencies
+npm install
+# Start local dev server
+npm run dev:server
+# Populate database with two users
+npm run populate-db
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Your server should now be running at http://locahost:3001 and you will now have two users in your MongoDB database!
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Populated Database Data
 
-## Learn More
+Once you run the `populate-db` script, you should have two users in your database:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Tony Stark
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- First Name: `Tony`
+- Last Name: `Stark`
+- Email: `tony@stark.com`
+- Password: `password123`
 
-### Code Splitting
+### Steve Rogers
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- First Name: `Steve`,
+- Last Name: `Rogers`,
+- Email: `steve@rogers.com`,
+- Password: `password456`
 
-### Analyzing the Bundle Size
+## API Documentation
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+To learn more about how the API works, once you have started your local environment, you can visit: http://localhost:3001/api-docs
 
-### Making a Progressive Web App
+Front-End
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+1. Clone this repo 
+1. Open a terminal window in the cloned project
+1. Run the following commands:
 
-### Advanced Configuration
+- Install the packages
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+`npm i`
 
-### Deployment
+- Run the project (port 3000 by default)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+`npm start`
