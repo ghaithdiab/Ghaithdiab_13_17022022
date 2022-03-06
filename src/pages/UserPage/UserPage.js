@@ -3,11 +3,11 @@ import Header from '../../components/Header/Header'
 import Footer from '../../components/Footer/Footer'
 import './UserPage.css'
 import { useDispatch, useSelector } from 'react-redux'
-import { Navigate } from 'react-router-dom'
 import GetUserInfo from '../../Actions/GetUserInfoAction'
 import UpdateUserInfo from '../../Actions/UpdateUserInfoAction'
 import Account from '../../components/Account/Account'
 import { accounts } from '../../dataMockup/AccountsData'
+import { Navigate } from 'react-router-dom'
 
 export default function UserPage() {
   const [formDisplayed, setFormDisPlayed] = useState(false)
@@ -15,17 +15,21 @@ export default function UserPage() {
   const globalState = useSelector((state) => state)
   const dispatch = useDispatch()
   
+  
   useEffect(() => {
-    dispatch(GetUserInfo())
-  }, [dispatch])
+    if(globalState.isLoggedin){
+      dispatch(GetUserInfo())
+    }
+  }, [globalState.isLoggedin,dispatch])
 
   const updateUserName = (e) => {
     e.preventDefault()
     dispatch(UpdateUserInfo(name))
     setFormDisPlayed(false)
   }
+
   if (!globalState.isLoggedin) {
-    return <Navigate to="/" />
+    return <Navigate to="/Login" />
   }
   return (
     <div>

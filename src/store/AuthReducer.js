@@ -28,14 +28,14 @@ const AuthReduser = (state = initState, action) => {
       }
     case 'LOG_OUT':
       return {
-        ...initState,
+        ...initState
       }
     case 'USER_INFO':
       return {
         ...initState,
         firstName: action.payload.firstName,
         lastName: action.payload.lastName,
-        isLoggedin: true,
+        isLoggedin:true
       }
 
     default:

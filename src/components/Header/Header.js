@@ -22,7 +22,12 @@ export default function Header() {
         />
         <h1 className="sr-only">Argent Bank</h1>
       </Link>
-      {globalState.isLoggedin ? (
+      {!globalState.isLoggedin ? (
+        <Link className="main-nav-item" to="/Login">
+          <i className="fa fa-user-circle"></i>
+          Sign In
+        </Link>
+      ) : (
         <div>
           <Link to="/user" className="main-nav-item">
               <i className="fa fa-user-circle"></i>
@@ -33,11 +38,6 @@ export default function Header() {
             Sign Out
           </Link>
         </div>
-      ) : (
-        <Link className="main-nav-item" to="/Login">
-          <i className="fa fa-user-circle"></i>
-          Sign In
-        </Link>
       )}
     </nav>
   )
