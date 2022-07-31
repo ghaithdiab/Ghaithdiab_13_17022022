@@ -9,8 +9,11 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<HomePage/>}></Route>
+          <Route path='/ghaithdiab_13_17022022' element={<HomePage/>}></Route>
           <Route path='/login' element={<LoginPage/>}></Route>
+          <Route path='/ghaithdiab_13_17022022/login' element={<LoginPage/>}></Route>
           <Route path='/user' element={<UserPage/>}></Route>
+          <Route path='ghaithdiab_13_17022022/user' element={<UserPage/>}></Route>
           <Route path='/*' element={<ErrorPage/>}></Route>
         </Routes>
       </BrowserRouter>
